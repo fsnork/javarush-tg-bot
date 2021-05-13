@@ -7,15 +7,18 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="javarush-tg-bot" />
+        <module name="jr-telegram-bot" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="javarush-tg-bot" target="11" />
+      <module name="jr-telegram-bot" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="javarush-tg-bot" options="-parameters" />
+      <module name="jr-telegram-bot" options="-parameters" />
     </option>
   </component>
 </project>
