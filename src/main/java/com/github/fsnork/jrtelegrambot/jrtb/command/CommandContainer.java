@@ -7,12 +7,12 @@ import static com.github.fsnork.jrtelegrambot.jrtb.command.CommandName.*;
 
 public class CommandContainer {
 
-    private final ImmutableMap<Object, Object> commandMap;
+    private final ImmutableMap<String, Command> commandMap;
     private final Command unknownCommand;
 
     public CommandContainer(SendBotMessageService sendBotMessageService) {
 
-        commandMap = ImmutableMap.<Object, Object>builder()
+        commandMap = ImmutableMap.<String, Command>builder()
                 .put(START.getCommandName(), new StartCommand(sendBotMessageService))
                 .put(STOP.getCommandName(), new StopCommand(sendBotMessageService))
                 .put(HELP.getCommandName(), new HelpCommand(sendBotMessageService))
@@ -23,6 +23,6 @@ public class CommandContainer {
     }
 
     public Command retrieveCommand(String commandIdentifier) {
-        return (Command) commandMap.getOrDefault(commandIdentifier, unknownCommand);
+        return commandMap.getOrDefault(commandIdentifier, unknownCommand);
     }
 }
