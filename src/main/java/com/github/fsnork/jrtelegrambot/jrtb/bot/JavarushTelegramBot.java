@@ -38,7 +38,7 @@ public class JavarushTelegramBot extends TelegramLongPollingBot {
     public void onUpdateReceived(Update update) {
         if (update.hasMessage() && update.getMessage().hasText()) {
             String message = update.getMessage().getText().trim();
-            if (message.startsWith(COMMAND_PREFIX.getCommandName())) {
+            if (message.startsWith("/")) {
                 String commandIdentifier = message.split(" ")[0].toLowerCase();
 
                 commandContainer.retrieveCommand(commandIdentifier).execute(update);

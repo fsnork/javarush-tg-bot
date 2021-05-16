@@ -8,7 +8,7 @@ import static com.github.fsnork.jrtelegrambot.jrtb.command.CommandName.*;
 public class CommandContainer {
 
     private final ImmutableMap<String, Command> commandMap;
-    private final Command unknownCommand;
+    private final UnknownCommand unknownCommand;
 
     public CommandContainer(SendBotMessageService sendBotMessageService) {
 

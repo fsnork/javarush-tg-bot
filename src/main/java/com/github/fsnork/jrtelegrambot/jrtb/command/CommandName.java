@@ -5,8 +5,8 @@ public enum CommandName {
     START("/start"),
     STOP("/stop"),
     HELP("/help"),
-    NO(""),
-    COMMAND_PREFIX("/");
+    NO("");
+    //COMMAND_PREFIX("/");
 
     private final String commandName;
 

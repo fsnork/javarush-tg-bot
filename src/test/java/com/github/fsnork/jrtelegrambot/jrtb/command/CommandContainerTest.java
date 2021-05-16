@@ -20,8 +20,7 @@ public class CommandContainerTest {
         commandContainer = new CommandContainer(sendBotMessageService);
     }
 
-    // todo Doesn't work, don't know why
-    /*@Test
+    @Test
     public void shouldGetAllTheExistingCommands() {
         //when-then
         Arrays.stream(CommandName.values())
@@ -29,7 +28,7 @@ public class CommandContainerTest {
                     Command command = commandContainer.retrieveCommand(commandName.getCommandName());
                     Assertions.assertNotEquals(UnknownCommand.class, command.getClass());
                 });
-    }*/
+    }
 
     @Test
     public void shouldReturnUnknownCommand() {
