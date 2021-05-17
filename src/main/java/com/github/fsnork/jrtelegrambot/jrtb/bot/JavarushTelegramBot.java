@@ -12,6 +12,8 @@ import static com.github.fsnork.jrtelegrambot.jrtb.command.CommandName.*;
 @Component
 public class JavarushTelegramBot extends TelegramLongPollingBot {
 
+    private static final String PREFIX = "/";
+
     @Value("${bot.username}")
     private String username;
 
@@ -38,7 +40,7 @@ public class JavarushTelegramBot extends TelegramLongPollingBot {
     public void onUpdateReceived(Update update) {
         if (update.hasMessage() && update.getMessage().hasText()) {
             String message = update.getMessage().getText().trim();
-            if (message.startsWith("/")) {
+            if (message.startsWith(PREFIX)) {
                 String commandIdentifier = message.split(" ")[0].toLowerCase();
 
                 commandContainer.retrieveCommand(commandIdentifier).execute(update);
